@@ -1,0 +1,195 @@
+package exercise;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Set;
+
+
+public class Test {
+	//private static volatile HashMap hp=new HashMap(); 
+	private static SychornizeHashMap hp =new SychornizeHashMap();
+	
+	public static void main(String[] args) {
+		new Test();
+		Set entrySet = hp.entrySet();
+		Iterator iterator = entrySet.iterator();
+		while(iterator.hasNext()) {
+		Entry	next = (Entry) iterator.next();
+			System.out.println(next.getValue());
+			System.out.println(next.getKey());
+			
+		}
+		
+	}
+	public Test() {
+		
+		
+		 Thread  t1 =new Thread()
+			{
+				public void run() {
+					
+					for(int i=0;i<500000;i++) {
+						hp.put(new Integer(i), i);
+						
+						
+					}
+					System.out.println("t1执行完毕");
+					
+				};
+				
+				
+					};
+					Thread t2 =new Thread()
+					{
+						public void run() {
+							
+							for(int i=0;i<500000;i++) {
+								hp.put(new Integer(i), i);
+								
+								
+							}
+							System.out.println("t2执行完毕");
+							
+						};
+						
+						
+						
+							};
+							
+						 Thread t3 =new Thread()
+							{
+								public void run() {
+									
+									for(int i=0;i<500000;i++) {
+										hp.put(new Integer(i), i);
+										
+										
+									}
+									System.out.println("t3执行完毕");
+									
+								};
+								
+								
+									};
+								 Thread t4 =new Thread()
+									{
+										public void run() {
+											
+											for(int i=0;i<500000;i++) {
+												hp.put(new Integer(i), i);
+												
+												
+											}
+											System.out.println("t4执行完毕");
+											
+										};
+										
+										
+											};
+											 Thread t5=new Thread()
+											{
+												public void run() {
+													
+													for(int i=0;i<500000;i++) {
+														hp.put(new Integer(i), i);
+														
+														
+													}
+													System.out.println("t5执行完毕");
+													
+												};
+												
+												
+													};
+													 Thread t6 =new Thread()
+													{
+														public void run() {
+															
+															for(int i=0;i<500000;i++) {
+																hp.put(new Integer(i), i);
+																
+																
+															}
+															System.out.println("t6执行完毕");
+															
+														};
+														
+														
+															};
+														 Thread t7=new Thread()
+															{
+																public void run() {
+																	
+																	for(int i=0;i<500000;i++) {
+																		hp.put(new Integer(i), i);
+																		
+																		
+																	}
+																	System.out.println("t7执行完毕");
+																	
+																};
+																
+																
+																	};
+															Thread t8 =new Thread()
+																	{
+																		public void run() {
+																			
+																			for(int i=0;i<500000;i++) {
+																				hp.put(new Integer(i), i);
+																				
+																				
+																			}
+																			System.out.println("t8执行完毕");
+																			
+																		};
+																		
+																		
+																			};
+																		Thread t9 =new Thread()
+																			{
+																				public void run() {
+																					
+																					for(int i=0;i<500000;i++) {
+																						hp.put(new Integer(i), i);
+																						
+																						
+																					}
+																					System.out.println("t9执行完毕");
+																					
+																				};
+																				
+																				
+																					};
+																				 Thread t10 =new Thread()
+																					{
+																						public void run() {
+																							
+																							for(int i=0;i<500000;i++) {
+																								hp.put(new Integer(i), i);
+																								
+																							}
+																							System.out.println("t10执行完毕");
+																							
+																						};
+																						
+																						
+																							};
+																							t1.start();
+																							t2.start();
+																							t3.start();
+																							t4.start();
+																							t5.start();
+																							t6.start();
+																							t7.start();
+																							t8.start();
+																							t9.start();
+																							t10.start();
+																				
+	}
+
+	
+																					
+
+}
