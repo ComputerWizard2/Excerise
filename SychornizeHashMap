@@ -1,0 +1,29 @@
+package exercise;
+
+import java.util.HashMap;
+
+public class SychornizeHashMap extends HashMap {
+
+	@Override
+	public Object  put(Object key, Object value) {
+		synchronized (key) {
+			
+		return super.put(key, value);
+		}
+		
+		
+	}public SychornizeHashMap() {
+		// TODO Auto-generated constructor stub
+	}@Override
+	public Object get(Object key) {
+		synchronized (SychornizeHashMap.class) {
+			return super.get(key);
+
+		}
+		
+			
+	}
+
+	
+
+}
